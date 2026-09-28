@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>1.2.8 deleted</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --crimson:#A30F2B; --red:#96172E; --deep:#5B0107; --ink:#1D1D1B;
+  --slate:#676B6D; --mist:#B3B5B6; --paper:#FBFCFC; --hair:#E4E6E6;
+  --font: "futura-pt","Futura","Century Gothic","Avenir Next",sans-serif;
+}
+body { background:#d8dadb; }
+.card { width:1080px; height:1350px; background:var(--paper); font-family:var(--font); color:var(--ink);
+        display:flex; flex-direction:column; overflow:hidden; border-top:10px solid var(--red);
+        position:relative; -webkit-font-smoothing:antialiased; }
+
+/* ---------- dark band ---------- */
+.band { height:520px; background:var(--ink); position:relative; flex:0 0 520px; }
+.band .top { position:absolute; top:40px; left:76px; right:76px; display:flex; justify-content:space-between; align-items:center; }
+.lockup { display:flex; align-items:center; gap:18px; }
+.wordmark { font-weight:400; font-size:22px; letter-spacing:.20em; line-height:1.16; color:#fff; }
+.kicker { text-align:right; font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:#8e8e8c; line-height:1.9; }
+.kicker b { color:var(--crimson); font-weight:500; display:block; }
+
+.who { position:absolute; left:76px; bottom:72px; max-width:600px; }
+.who .eyebrow { font-size:14px; letter-spacing:.26em; text-transform:uppercase; color:var(--crimson); font-weight:500; }
+.who .name { font-size:56px; font-weight:400; color:#fff; line-height:1.04; margin-top:16px; letter-spacing:.005em; }
+.who .role { font-size:20px; color:#9a9a98; margin-top:14px; line-height:1.5; }
+
+.portrait { position:absolute; right:76px; top:326px; width:340px; height:340px; z-index:6; }
+.portrait img { width:100%; height:100%; display:block; }
+
+/* ---------- body ---------- */
+.main { flex:1 1 auto; padding:212px 76px 0; position:relative; z-index:2; }
+.sec { font-size:14px; letter-spacing:.26em; text-transform:uppercase; color:var(--slate); }
+.clause { margin-top:18px; font-size:98px; font-weight:400; line-height:1; letter-spacing:-.01em; }
+.clause span { color:var(--red); }
+.rule { height:3px; background:var(--red); width:140px; margin:36px 0 30px; }
+.say { font-size:29px; line-height:1.34; color:var(--ink); max-width:900px; }
+.say b { color:var(--red); font-weight:400; }
+.credit { margin-top:30px; font-size:20px; color:var(--slate); line-height:1.44; max-width:880px;
+          border-left:3px solid var(--mist); padding-left:20px; }
+
+.foot { border-top:1px solid var(--hair); padding:18px 76px 30px;
+        display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }
+.foot .fine { font-size:14px; color:var(--mist); letter-spacing:.03em; line-height:1.5; max-width:720px; }
+.foot .url { font-size:16px; color:var(--red); letter-spacing:.12em; text-transform:uppercase; font-weight:500; white-space:nowrap; }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="band">
+    <div class="top">
+      <div class="lockup">
+        <svg width="50" height="59" viewBox="0 0 128 150"><g fill="#A30F2B">
+          <circle cx="60" cy="20" r="13" opacity=".26"/><circle cx="36" cy="36" r="24" opacity="1"/>
+          <circle cx="66" cy="46" r="15" opacity=".56"/><circle cx="46" cy="76" r="28" opacity=".88"/>
+          <circle cx="20" cy="88" r="19" opacity=".68"/><circle cx="74" cy="94" r="12" opacity=".46"/>
+          <circle cx="40" cy="114" r="14" opacity=".34"/><circle cx="54" cy="138" r="9" opacity="1"/>
+        </g></svg>
+        <div class="wordmark">THE<br>IRON<br>CLINIC</div>
+      </div>
+      <div class="kicker">
+        <b>Guideline update</b>
+        NICE NG88 &nbsp;·&nbsp; 7 July 2026
+      </div>
+    </div>
+
+    <div class="who">
+      <div class="eyebrow">Ten years of work behind one deletion</div>
+      <div class="name">Professor<br>Toby Richards</div>
+      <div class="role">Professor of Surgery &nbsp;·&nbsp; Director of The Iron Clinic</div>
+    </div>
+
+    <div class="portrait"><img src="https://www.theironclinic.com/cms/wp-content/uploads/2026/06/TIC-_Dr-Toby-Richards.webp" alt="Professor Toby Richards"></div>
+  </div>
+
+  <div class="main">
+    <div class="sec">Heavy menstrual bleeding &nbsp;/&nbsp; laboratory tests</div>
+    <div class="clause">1.2.8 <span>Deleted.</span></div>
+    <div class="rule"></div>
+    <div class="say">For nineteen years this line told clinicians <b>not</b> to routinely test serum ferritin in women with heavy periods. In July 2026, NICE removed it.</div>
+    <div class="credit">The removal follows a decade of research into heavy periods and iron deficiency in women, and the work of the Women's Health Advisory Board on which Prof Richards sat.</div>
+  </div>
+
+  <div class="foot">
+    <div class="fine">NICE guideline NG88, Heavy menstrual bleeding: assessment and management. Recommendation 1.2.8, dated 2007, removed 7 July 2026. NICE cites feedback from stakeholders; NG88 now carries no recommendation either way on ferritin testing.</div>
+    <div class="url">theironclinic.com</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>The iron gap</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --crimson: #A30F2B;
+  --red:     #96172E;
+  --deep:    #5B0107;
+  --ink:     #1D1D1B;
+  --slate:   #676B6D;
+  --mist:    #B3B5B6;
+  --paper:   #FBFCFC;
+  --hair:    #E4E6E6;
+  --font: "futura-pt", "Futura", "Century Gothic", "Avenir Next", sans-serif;
+}
+body { background: #d8dadb; }
+.card {
+  width: 1080px; height: 1350px; background: var(--paper);
+  font-family: var(--font); color: var(--ink);
+  display: flex; flex-direction: column; overflow: hidden;
+  border-top: 10px solid var(--red);
+  -webkit-font-smoothing: antialiased;
+}
+.pad { padding-left: 64px; padding-right: 64px; }
+
+.head { padding-top: 36px; display: flex; justify-content: space-between; align-items: center; }
+.lockup { display: flex; align-items: center; gap: 18px; }
+.wordmark { font-weight: 400; font-size: 22px; letter-spacing: .20em; line-height: 1.16; }
+.kicker { text-align: right; font-size: 13px; letter-spacing: .24em; text-transform: uppercase; color: var(--slate); line-height: 1.9; }
+.kicker b { color: var(--red); font-weight: 500; display: block; }
+
+.title { padding-top: 38px; }
+.title h1 { font-size: 56px; font-weight: 400; line-height: 1.02; }
+.title h1 span { color: var(--red); }
+.title p { margin-top: 14px; font-size: 21px; color: var(--slate); max-width: 890px; line-height: 1.42; }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+.tile { background: #fff; border: 1px solid var(--hair); border-top: 3px solid var(--red); padding: 18px 18px 20px; }
+.tile .n { font-size: 38px; font-weight: 400; line-height: 1; letter-spacing: -.005em; }
+.tile .n u { text-decoration: none; font-size: 20px; color: var(--slate); margin-left: 3px; }
+.tile .l { font-size: 15px; color: var(--slate); line-height: 1.34; margin-top: 9px; }
+.tile.hero { background: var(--deep); border-color: var(--deep); }
+.tile.hero .n { color: #fff; }
+.tile.hero .n u { color: #E8B6BF; }
+.tile.hero .l { color: #E8B6BF; }
+
+/* chart */
+.chartwrap { margin-top: 34px; }
+.chart-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.chart-head .ct { font-size: 15px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; }
+.legend { display: flex; gap: 26px; font-size: 16px; color: var(--slate); }
+.legend i { display: inline-block; width: 26px; height: 4px; margin-right: 9px; position: relative; top: -4px; }
+svg text { font-family: var(--font); }
+
+/* takeaway */
+.takeaway { margin-top: 26px; background: var(--ink); color: #fff; padding: 22px 28px; display: flex; align-items: center; gap: 24px; }
+.takeaway .big { font-size: 40px; font-weight: 400; color: #fff; white-space: nowrap; }
+.takeaway .big u { text-decoration: none; font-size: 21px; color: var(--mist); }
+.takeaway .tx { font-size: 21px; color: #c9cacb; line-height: 1.38; }
+
+.foot { margin-top: auto; border-top: 1px solid var(--hair); padding-top: 18px; padding-bottom: 26px;
+        display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.foot .fine { font-size: 15px; color: var(--mist); letter-spacing: .03em; line-height: 1.5; max-width: 720px; }
+.foot .url { font-size: 16px; color: var(--red); letter-spacing: .12em; text-transform: uppercase; font-weight: 500; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="head pad">
+    <div class="lockup">
+      <svg width="50" height="59" viewBox="0 0 128 150"><g fill="#A30F2B">
+        <circle cx="60" cy="20" r="13" opacity=".18"/><circle cx="36" cy="36" r="24" opacity="1"/>
+        <circle cx="66" cy="46" r="15" opacity=".50"/><circle cx="46" cy="76" r="28" opacity=".85"/>
+        <circle cx="20" cy="88" r="19" opacity=".62"/><circle cx="74" cy="94" r="12" opacity=".40"/>
+        <circle cx="40" cy="114" r="14" opacity=".28"/><circle cx="54" cy="138" r="9" opacity="1"/>
+      </g></svg>
+      <div class="wordmark">THE<br>IRON<br>CLINIC</div>
+    </div>
+    <div class="kicker">
+      <b>Data note</b>
+      Replenishing iron stores
+    </div>
+  </div>
+
+  <div class="title pad">
+    <h1>A thousand milligrams behind<span>..</span></h1>
+    <p>Iron deficiency is not a small shortfall you can eat your way out of quickly. It is a measurable deficit, and the two ways of closing it run on very different clocks.</p>
+  </div>
+
+  <div class="tiles pad">
+    <div class="tile">
+      <div class="n">4,000<u>mg</u></div>
+      <div class="l">Total iron in the body</div>
+    </div>
+    <div class="tile">
+      <div class="n">1,000<u>mg</u></div>
+      <div class="l">Normally held in reserve as ferritin</div>
+    </div>
+    <div class="tile">
+      <div class="n">200<u>mg</u></div>
+      <div class="l">Replaced per month by diet and tablets</div>
+    </div>
+    <div class="tile hero">
+      <div class="n">1,000<u>mg</u></div>
+      <div class="l">Replaced in a single infusion</div>
+    </div>
+  </div>
+
+  <div class="chartwrap pad">
+    <div class="chart-head">
+      <div class="ct">Iron stores replenished, mg</div>
+      <div class="legend">
+        <span><i style="background:var(--crimson)"></i>Intravenous</span>
+        <span><i style="background:var(--mist)"></i>Diet and tablets</span>
+      </div>
+    </div>
+
+    <svg width="952" height="416" viewBox="0 0 952 416">
+      <!-- gap fill -->
+      <polygon points="78,354 78,26 798,26" fill="#A30F2B" opacity=".09"/>
+
+      <!-- gridlines -->
+      <g stroke="#E4E6E6" stroke-width="1">
+        <line x1="78" y1="26"  x2="942" y2="26"/>
+        <line x1="78" y1="108" x2="942" y2="108"/>
+        <line x1="78" y1="190" x2="942" y2="190"/>
+        <line x1="78" y1="272" x2="942" y2="272"/>
+      </g>
+      <line x1="78" y1="354" x2="942" y2="354" stroke="#1D1D1B" stroke-width="2"/>
+      <line x1="78" y1="26"  x2="78"  y2="354" stroke="#1D1D1B" stroke-width="2"/>
+
+      <!-- target line -->
+      <line x1="78" y1="26" x2="942" y2="26" stroke="#96172E" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+      <!-- y labels -->
+      <g fill="#676B6D" font-size="16" text-anchor="end">
+        <text x="64" y="32">1,000</text>
+        <text x="64" y="114">750</text>
+        <text x="64" y="196">500</text>
+        <text x="64" y="278">250</text>
+        <text x="64" y="360">0</text>
+      </g>
+
+      <!-- x labels -->
+      <g fill="#676B6D" font-size="16" text-anchor="middle">
+        <text x="78"  y="382">0</text>
+        <text x="222" y="382">1</text>
+        <text x="366" y="382">2</text>
+        <text x="510" y="382">3</text>
+        <text x="654" y="382">4</text>
+        <text x="798" y="382">5</text>
+        <text x="942" y="382">6</text>
+      </g>
+      <text x="510" y="408" fill="#676B6D" font-size="16" text-anchor="middle" letter-spacing="1.6">MONTHS FROM STARTING TREATMENT</text>
+
+      <!-- oral ramp -->
+      <polyline points="78,354 798,26 942,26" fill="none" stroke="#B3B5B6" stroke-width="5" stroke-linejoin="round"/>
+      <!-- IV step -->
+      <polyline points="78,354 78,26 942,26" fill="none" stroke="#A30F2B" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="78" cy="26" r="9" fill="#A30F2B"/>
+      <circle cx="798" cy="26" r="9" fill="#B3B5B6"/>
+
+      <!-- annotations -->
+      <text x="100" y="52" fill="#A30F2B" font-size="19" font-weight="500">One infusion. Day zero.</text>
+      <text x="212" y="150" fill="#96172E" font-size="19" font-weight="500" letter-spacing="1.4">FIVE MONTHS OF DEFICIT</text>
+      <text x="212" y="176" fill="#96172E" font-size="16" opacity=".72">the shaded area is time spent still short</text>
+      <text x="600" y="238" fill="#676B6D" font-size="18" text-anchor="middle">about 200 mg a month</text>
+      <text x="600" y="262" fill="#676B6D" font-size="18" text-anchor="middle">by diet and tablets</text>
+    </svg>
+  </div>
+
+  <div class="takeaway pad" style="margin-left:64px; margin-right:64px; padding-left:28px; padding-right:28px">
+    <div class="big">5<u>months</u></div>
+    <div class="tx">is how long 200 mg a month takes to close a 1,000 mg deficit. An infusion closes it in one visit, and patients report feeling better in days.</div>
+  </div>
+
+  <div class="foot pad">
+    <div class="fine">Figures as published by The Iron Clinic. The five-month figure is arithmetic on those figures, not a separate claim. Around 2 to 3% of patients report flushing or mild abdominal discomfort during an infusion.</div>
+    <div class="url">theironclinic.com</div>
+  </div>
+
+</div>
+</body>
+</html>

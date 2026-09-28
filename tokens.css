@@ -1,0 +1,53 @@
+/* The Iron Clinic design tokens
+   Extracted 2026-08-06 from theironclinic.com
+   Sources: /cms/wp-content/themes/theironclinic/styles/common.css (colour + type)
+            /images/the-iron-clinic-treating-iron-deficiency-in-one-visit.png (mark, pixel-sampled)
+            https://use.typekit.net/mie5enn.css (font: futura-pt) */
+
+:root {
+  /* --- Core --- */
+  --tic-crimson:      #A30F2B;  /* the mark. Full-opacity cell in the logo cluster */
+  --tic-red:          #96172E;  /* UI primary. 58 declarations in common.css, the single dominant colour */
+  --tic-red-hover:    #990000;  /* link/button hover state */
+  --tic-oxblood:      #74040E;  /* two cells overlapping */
+  --tic-oxblood-deep: #5B0107;  /* three-plus cells overlapping. Deepest value in the mark */
+  --tic-ink:          #1D1D1B;  /* wordmark. Print black, not #000 */
+
+  /* --- Neutrals --- */
+  --tic-slate:        #676B6D;  /* body copy, secondary text */
+  --tic-mist:         #B3B5B6;  /* rules, dividers, disabled */
+  --tic-paper:        #FBFCFC;  /* section background */
+  --tic-white:        #FFFFFF;
+
+  /* --- Accents (used sparingly on the live site) --- */
+  --tic-navy:         #0A2F5F;
+  --tic-ochre:        #BEB800;
+
+  /* --- Cell tints: the mark's translucent crimsons --- */
+  --tic-cell-100:     rgba(163, 15, 43, 1.00);
+  --tic-cell-70:      rgba(163, 15, 43, 0.70);
+  --tic-cell-45:      rgba(163, 15, 43, 0.45);
+  --tic-cell-25:      rgba(163, 15, 43, 0.25);
+  --tic-cell-12:      rgba(163, 15, 43, 0.12);
+
+  /* --- Type --- */
+  --tic-font: "futura-pt", "Futura", "Century Gothic", "Avenir Next", sans-serif;
+  --tic-w-light: 300;
+  --tic-w-book:  400;
+  --tic-w-medium:500;
+  --tic-w-bold:  700;
+
+  /* html { font-size: 62.5% } on the live site, so 1rem = 10px */
+  --tic-size-hero: 6.0rem;
+  --tic-size-h1:   3.2rem;
+  --tic-size-h2:   3.0rem;
+  --tic-size-h3:   2.4rem;
+  --tic-size-lead: 2.2rem;
+  --tic-size-body: 1.8rem;
+  --tic-size-small:1.6rem;
+  --tic-size-fine: 1.4rem;
+
+  /* --- Geometry --- */
+  --tic-radius: 0;      /* square. The only 50% in the sheet is the circular mark */
+  --tic-radius-cell: 50%;
+}

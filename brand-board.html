@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>The Iron Clinic brand system</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+* { box-sizing: border-box; }
+html { font-size: 62.5%; }
+body {
+  margin: 0; background: var(--tic-paper); color: var(--tic-ink);
+  font-family: var(--tic-font); font-size: 1.7rem; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { width: 1360px; margin: 0 auto; padding: 0 56px 96px; }
+
+/* ---------- masthead ---------- */
+.masthead { background: var(--tic-ink); color: #fff; padding: 56px 0 52px; margin-bottom: 64px; }
+.masthead .wrap { padding-bottom: 0; }
+.mh-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 64px; }
+.mh-meta { text-align: right; font-size: 1.5rem; color: #9a9a98; letter-spacing: .06em; line-height: 2; }
+.mh-meta b { color: #fff; font-weight: 500; }
+
+/* ---------- logo lockup ---------- */
+.lockup { display: flex; align-items: center; gap: 34px; }
+.wordmark { font-weight: 300; font-size: 5.4rem; line-height: .96; letter-spacing: .10em; }
+.wordmark.on-dark { color: #fff; }
+.wordmark.on-light { color: var(--tic-ink); }
+
+/* ---------- section furniture ---------- */
+section { margin-bottom: 72px; }
+.eyebrow {
+  font-size: 1.3rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--tic-red); font-weight: 500; margin: 0 0 10px;
+}
+h2.sec { font-size: 3.0rem; font-weight: 300; letter-spacing: .02em; margin: 0 0 6px; }
+.sec-note { color: var(--tic-slate); font-size: 1.6rem; margin: 0 0 26px; max-width: 900px; }
+hr.rule { border: 0; border-top: 1px solid var(--tic-mist); margin: 0 0 30px; }
+
+/* ---------- colour ---------- */
+.swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.sw { border: 1px solid rgba(0,0,0,.08); }
+.sw .chip { height: 132px; }
+.sw .lab { padding: 12px 14px 16px; background: #fff; }
+.sw .nm { font-size: 1.5rem; font-weight: 500; letter-spacing: .04em; }
+.sw .hx { font-size: 1.4rem; color: var(--tic-slate); font-family: ui-monospace, Menlo, monospace; letter-spacing: .02em; }
+.sw .use { font-size: 1.3rem; color: var(--tic-slate); margin-top: 6px; line-height: 1.4; }
+.row2 { margin-top: 14px; }
+
+/* ---------- type ---------- */
+.type-row { display: flex; align-items: baseline; gap: 28px; padding: 14px 0; border-bottom: 1px solid #e6e8e8; }
+.type-row .spec { flex: 0 0 210px; font-size: 1.4rem; color: var(--tic-slate); font-family: ui-monospace, Menlo, monospace; }
+.t-hero { font-size: 6.0rem; font-weight: 300; line-height: 1; letter-spacing: .01em; }
+.t-h1   { font-size: 3.2rem; font-weight: 300; }
+.t-h2   { font-size: 3.0rem; font-weight: 400; }
+.t-h3   { font-size: 2.4rem; font-weight: 500; }
+.t-lead { font-size: 2.2rem; font-weight: 400; color: var(--tic-slate); }
+.t-body { font-size: 1.8rem; font-weight: 400; color: var(--tic-slate); }
+.t-fine { font-size: 1.4rem; font-weight: 400; color: var(--tic-slate); letter-spacing: .04em; }
+
+/* ---------- components ---------- */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.btn {
+  display: inline-block; font-family: var(--tic-font); font-size: 1.7rem; font-weight: 500;
+  letter-spacing: .04em; padding: 15px 34px; border-radius: 0; border: 2px solid var(--tic-red);
+  background: var(--tic-red); color: #fff; text-decoration: none; cursor: pointer;
+}
+.btn.ghost { background: transparent; color: var(--tic-red); }
+.btn.dark  { background: var(--tic-ink); border-color: var(--tic-ink); }
+.btn.hover { background: var(--tic-red-hover); border-color: var(--tic-red-hover); }
+.btn-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-cap { font-size: 1.3rem; color: var(--tic-slate); letter-spacing: .1em; text-transform: uppercase; }
+
+.card { background: #fff; border: 1px solid #e6e8e8; padding: 30px 32px 34px; }
+.card h3 { font-size: 2.4rem; font-weight: 400; margin: 0 0 4px; }
+.card h3 .dots { color: var(--tic-red); }
+.card p { color: var(--tic-slate); font-size: 1.7rem; margin: 0; }
+
+.quote { background: #fff; border-top: 4px solid var(--tic-red); padding: 30px 32px 26px; }
+.quote p { font-size: 1.9rem; font-weight: 300; margin: 0 0 16px; line-height: 1.5; }
+.quote cite { font-style: normal; font-size: 1.5rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tic-red); }
+
+.stat { background: var(--tic-ink); color: #fff; padding: 28px 30px; }
+.stat .n { font-size: 4.4rem; font-weight: 300; line-height: 1; color: #fff; }
+.stat .n small { font-size: 2.2rem; color: var(--tic-crimson); }
+.stat .l { font-size: 1.5rem; color: #a8a8a6; letter-spacing: .08em; text-transform: uppercase; margin-top: 8px; }
+
+.navbar { background: #fff; border-bottom: 3px solid var(--tic-red); padding: 18px 26px; display: flex; align-items: center; justify-content: space-between; }
+.navbar ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+.navbar a { color: var(--tic-ink); text-decoration: none; font-size: 1.6rem; letter-spacing: .04em; }
+.navbar a.on { color: var(--tic-red); border-bottom: 2px solid var(--tic-red); padding-bottom: 3px; }
+
+/* ---------- voice ---------- */
+.voice { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e6e8e8; background: #fff; }
+.voice > div { padding: 26px 30px; }
+.voice > div + div { border-left: 1px solid #e6e8e8; }
+.voice h4 { margin: 0 0 12px; font-size: 1.4rem; letter-spacing: .16em; text-transform: uppercase; }
+.voice ul { margin: 0; padding-left: 20px; color: var(--tic-slate); font-size: 1.65rem; }
+.voice li { margin-bottom: 7px; }
+.is  h4 { color: var(--tic-red); }
+.not h4 { color: var(--tic-mist); }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="wrap">
+    <div class="mh-row">
+      <div class="lockup">
+        <!-- the mark: overlapping translucent cells -->
+        <svg width="128" height="150" viewBox="0 0 128 150" aria-label="The Iron Clinic mark">
+          <g fill="#A30F2B">
+            <circle cx="30" cy="16"  r="9"  opacity=".22"/>
+            <circle cx="60" cy="20"  r="13" opacity=".16"/>
+            <circle cx="36" cy="36"  r="24" opacity="1"/>
+            <circle cx="66" cy="46"  r="15" opacity=".55"/>
+            <circle cx="16" cy="56"  r="10" opacity=".38"/>
+            <circle cx="46" cy="76"  r="28" opacity=".85"/>
+            <circle cx="24" cy="88"  r="20" opacity=".70"/>
+            <circle cx="72" cy="94"  r="13" opacity=".45"/>
+            <circle cx="40" cy="112" r="15" opacity=".30"/>
+            <circle cx="52" cy="136" r="9"  opacity="1"/>
+          </g>
+        </svg>
+        <div class="wordmark on-dark">THE<br>IRON<br>CLINIC</div>
+      </div>
+      <div class="mh-meta">
+        <b>Brand system</b><br>
+        Extracted from theironclinic.com<br>
+        6 August 2026<br>
+        <b>futura-pt</b> · Adobe Typekit <span style="opacity:.5">mie5enn</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 1. MARK ============ -->
+  <section>
+    <p class="eyebrow">01 · Mark</p>
+    <h2 class="sec">Cells, not a syringe</h2>
+    <p class="sec-note">The mark is a vertical cluster of translucent crimson circles, reading as red blood cells or as iron dispersing through plasma. Overlaps multiply into oxblood, which is where the darkest palette values come from. It sits left of a three-line wordmark, never above it.</p>
+    <hr class="rule">
+    <div class="grid3">
+      <div class="card" style="text-align:center; padding:36px">
+        <div class="lockup" style="justify-content:center">
+          <svg width="86" height="102" viewBox="0 0 128 150"><g fill="#A30F2B">
+            <circle cx="30" cy="16" r="9" opacity=".22"/><circle cx="60" cy="20" r="13" opacity=".16"/>
+            <circle cx="36" cy="36" r="24" opacity="1"/><circle cx="66" cy="46" r="15" opacity=".55"/>
+            <circle cx="16" cy="56" r="10" opacity=".38"/><circle cx="46" cy="76" r="28" opacity=".85"/>
+            <circle cx="24" cy="88" r="20" opacity=".70"/><circle cx="72" cy="94" r="13" opacity=".45"/>
+            <circle cx="40" cy="112" r="15" opacity=".30"/><circle cx="52" cy="136" r="9" opacity="1"/>
+          </g></svg>
+          <div class="wordmark on-light" style="font-size:3.4rem">THE<br>IRON<br>CLINIC</div>
+        </div>
+        <p style="margin-top:22px; font-size:1.4rem; color:var(--tic-slate); letter-spacing:.12em; text-transform:uppercase">Primary · on paper</p>
+      </div>
+      <div class="card" style="text-align:center; padding:36px; background:var(--tic-ink); border-color:var(--tic-ink)">
+        <div class="lockup" style="justify-content:center">
+          <svg width="86" height="102" viewBox="0 0 128 150"><g fill="#A30F2B">
+            <circle cx="30" cy="16" r="9" opacity=".30"/><circle cx="60" cy="20" r="13" opacity=".24"/>
+            <circle cx="36" cy="36" r="24" opacity="1"/><circle cx="66" cy="46" r="15" opacity=".60"/>
+            <circle cx="16" cy="56" r="10" opacity=".45"/><circle cx="46" cy="76" r="28" opacity=".90"/>
+            <circle cx="24" cy="88" r="20" opacity=".75"/><circle cx="72" cy="94" r="13" opacity=".50"/>
+            <circle cx="40" cy="112" r="15" opacity=".36"/><circle cx="52" cy="136" r="9" opacity="1"/>
+          </g></svg>
+          <div class="wordmark on-dark" style="font-size:3.4rem">THE<br>IRON<br>CLINIC</div>
+        </div>
+        <p style="margin-top:22px; font-size:1.4rem; color:#8f8f8d; letter-spacing:.12em; text-transform:uppercase">Reversed · on ink</p>
+      </div>
+      <div class="card" style="text-align:center; padding:36px">
+        <div style="display:flex; gap:18px; justify-content:center; align-items:center; height:102px">
+          <svg width="86" height="102" viewBox="0 0 128 150"><g fill="#1D1D1B">
+            <circle cx="30" cy="16" r="9" opacity=".22"/><circle cx="60" cy="20" r="13" opacity=".16"/>
+            <circle cx="36" cy="36" r="24" opacity="1"/><circle cx="66" cy="46" r="15" opacity=".55"/>
+            <circle cx="16" cy="56" r="10" opacity=".38"/><circle cx="46" cy="76" r="28" opacity=".85"/>
+            <circle cx="24" cy="88" r="20" opacity=".70"/><circle cx="72" cy="94" r="13" opacity=".45"/>
+            <circle cx="40" cy="112" r="15" opacity=".30"/><circle cx="52" cy="136" r="9" opacity="1"/>
+          </g></svg>
+          <svg width="86" height="102" viewBox="0 0 128 150"><g fill="#A30F2B">
+            <circle cx="36" cy="36" r="24"/><circle cx="46" cy="76" r="28"/><circle cx="24" cy="88" r="20"/>
+            <circle cx="52" cy="136" r="9"/>
+          </g></svg>
+        </div>
+        <p style="margin-top:22px; font-size:1.4rem; color:var(--tic-slate); letter-spacing:.12em; text-transform:uppercase">Mono · and flat-fill favicon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. COLOUR ============ -->
+  <section>
+    <p class="eyebrow">02 · Colour</p>
+    <h2 class="sec">One red, carrying everything</h2>
+    <p class="sec-note">The live stylesheet declares <code>#96172E</code> 58 times and almost nothing else. Navy and ochre appear once each. This is a single-accent system: crimson on white, grey for prose, ink for the wordmark.</p>
+    <hr class="rule">
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#A30F2B"></div><div class="lab"><div class="nm">Crimson</div><div class="hx">#A30F2B</div><div class="use">The mark. Sampled from the logo cell at full opacity.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#96172E"></div><div class="lab"><div class="nm">Iron Red</div><div class="hx">#96172E</div><div class="use">UI primary. Buttons, links, rules, headings.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#990000"></div><div class="lab"><div class="nm">Red / hover</div><div class="hx">#990000</div><div class="use">Interactive hover only.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#74040E"></div><div class="lab"><div class="nm">Oxblood</div><div class="hx">#74040E</div><div class="use">Two cells overlapping. Depth, shadow.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#5B0107"></div><div class="lab"><div class="nm">Oxblood deep</div><div class="hx">#5B0107</div><div class="use">Three-plus overlap. Darkest red available.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#1D1D1B"></div><div class="lab"><div class="nm">Ink</div><div class="hx">#1D1D1B</div><div class="use">Wordmark and headings. Print black, not #000.</div></div></div>
+    </div>
+    <div class="swatches row2">
+      <div class="sw"><div class="chip" style="background:#676B6D"></div><div class="lab"><div class="nm">Slate</div><div class="hx">#676B6D</div><div class="use">Body copy, secondary text.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B3B5B6"></div><div class="lab"><div class="nm">Mist</div><div class="hx">#B3B5B6</div><div class="use">Rules, dividers, disabled states.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FBFCFC; border-bottom:1px solid #e6e8e8"></div><div class="lab"><div class="nm">Paper</div><div class="hx">#FBFCFC</div><div class="use">Section background.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid #e6e8e8"></div><div class="lab"><div class="nm">White</div><div class="hx">#FFFFFF</div><div class="use">Cards, panels, reversed type.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0A2F5F"></div><div class="lab"><div class="nm">Navy</div><div class="hx">#0A2F5F</div><div class="use">Accent. One declaration on the live site.</div></div></div>
+      <div class="sw"><div class="chip" style="background:#BEB800"></div><div class="lab"><div class="nm">Ochre</div><div class="hx">#BEB800</div><div class="use">Accent. One declaration. Use or drop.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 3. TYPE ============ -->
+  <section>
+    <p class="eyebrow">03 · Typography</p>
+    <h2 class="sec">Futura PT, one family, four weights</h2>
+    <p class="sec-note">Served from Adobe Typekit (kit <code>mie5enn</code>) and declared with <code>!important</code>, so nothing else is meant to appear. Geometric, wide-tracked, uppercase for the wordmark. Root is <code>62.5%</code>, so 1rem = 10px.</p>
+    <hr class="rule">
+    <div class="type-row"><div class="spec">6.0rem / 300 / hero</div><div class="t-hero">Essential iron</div></div>
+    <div class="type-row"><div class="spec">3.2rem / 300 / h1</div><div class="t-h1">Treating iron deficiency in one visit</div></div>
+    <div class="type-row"><div class="spec">3.0rem / 400 / h2</div><div class="t-h2">What is iron deficiency<span style="color:var(--tic-red)">..</span></div></div>
+    <div class="type-row"><div class="spec">2.4rem / 500 / h3</div><div class="t-h3">Iron treatment</div></div>
+    <div class="type-row"><div class="spec">2.2rem / 400 / lead</div><div class="t-lead">Iron is an essential nutrient for your body, which you typically get from your food.</div></div>
+    <div class="type-row"><div class="spec">1.8rem / 400 / body</div><div class="t-body">Iron deficiency can occur before you become anaemic. As your iron stores run low, the body makes fewer healthy red blood cells, which leads to iron deficiency anaemia.</div></div>
+    <div class="type-row" style="border-bottom:0"><div class="spec">1.4rem / 400 / fine</div><div class="t-fine">CQC-REGULATED · ESTABLISHED 2014 · SEVEN SPECIALIST DOCTORS</div></div>
+  </section>
+
+  <!-- ============ 4. COMPONENTS ============ -->
+  <section>
+    <p class="eyebrow">04 · Components</p>
+    <h2 class="sec">Square corners, no shadows</h2>
+    <p class="sec-note">The stylesheet sets <code>border-radius: 0 !important</code>. The only curve in the system is the mark. Everything else is a rectangle with a hairline border or a crimson top rule.</p>
+    <hr class="rule">
+
+    <div class="navbar" style="margin-bottom:30px">
+      <div style="display:flex; align-items:center; gap:14px">
+        <svg width="30" height="36" viewBox="0 0 128 150"><g fill="#A30F2B">
+          <circle cx="36" cy="36" r="24"/><circle cx="46" cy="76" r="28" opacity=".85"/>
+          <circle cx="24" cy="88" r="20" opacity=".7"/><circle cx="52" cy="136" r="9"/>
+        </g></svg>
+        <span style="font-weight:300; letter-spacing:.14em; font-size:1.9rem">THE IRON CLINIC</span>
+      </div>
+      <ul>
+        <li><a href="#" class="on">Booking</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About Iron</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:30px">
+      <p class="btn-cap" style="margin:0 0 12px">Buttons</p>
+      <div class="btn-row">
+        <a class="btn">Book a self-pay consultation</a>
+        <a class="btn hover">Hover</a>
+        <a class="btn ghost">Insurance-pay</a>
+        <a class="btn dark">Download information sheet</a>
+      </div>
+    </div>
+
+    <div class="grid3" style="margin-bottom:30px">
+      <div class="stat"><div class="n">5,000<small>+</small></div><div class="l">iron infusions delivered</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">specialist doctors</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">UK locations</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Essential iron<span class="dots">..</span></h3>
+        <p>Iron is present in haemoglobin, which carries oxygen from the lungs to the rest of the body. This aids concentration, physical energy and the immune system.</p>
+      </div>
+      <div class="quote">
+        <p>I did the 5km parkrun in 24:42 this morning. Before the iron I did it in 27:09.</p>
+        <cite>J.Y · client</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. VOICE ============ -->
+  <section>
+    <p class="eyebrow">05 · Voice</p>
+    <h2 class="sec">Clinical authority, domestic warmth</h2>
+    <p class="sec-note">Headings end in a double full stop (<code>Essential iron..</code>), which is the one typographic tic the brand owns. Copy is British, second person, and leans on credentials before benefits.</p>
+    <hr class="rule">
+    <div class="voice">
+      <div class="is">
+        <h4>It sounds like</h4>
+        <ul>
+          <li>"The UK's leading iron deficiency clinic."</li>
+          <li>"The only CQC-regulated provider dedicated exclusively to iron infusions."</li>
+          <li>"We only manage iron deficiency."</li>
+          <li>Plain-English physiology before any sales language.</li>
+          <li>Named clinicians, guideline authorship, publication counts.</li>
+          <li>Client, not patient. Reassured, confident, informed.</li>
+        </ul>
+      </div>
+      <div class="not">
+        <h4>It never sounds like</h4>
+        <ul>
+          <li>Wellness, boosting, detox, or drip-bar language.</li>
+          <li>Exclamation marks or urgency framing.</li>
+          <li>Before/after imagery or body claims.</li>
+          <li>Gendered marketing, despite a women's-health-heavy caseload.</li>
+          <li>Discounting. Price is stated, never promoted.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
